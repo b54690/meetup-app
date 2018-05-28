@@ -1,6 +1,16 @@
 var Meetup = require("meetup")
 var mup = new Meetup()
 let topicsCounter = {}
+var app = require('express')()
+var server = require('http').Server(app)
+var io = require('socket.io')(server)
+
+server.listen(3002, () => console.log('Listening on port 3002'))
+
+
+io.on('connection', socket => {
+  console.log('got connection')
+})
 
 
 mup.stream("/2/rsvps", stream => {
@@ -41,12 +51,18 @@ mup.stream("/2/rsvps", stream => {
             topic: topicName,
             count: topicsCounter[topicName]
             }
-        })
+          })
 
-        console.log(top10)
+          io.emit('action', arrayOfTopics)
+          io.emit('action', top10)
+
+
+        // console.log(top10)
+        // console.log(arrayOfTopics)
       }
 
     }).on("error", e => {
         console.log("error! " + e)
      });
- });
+    })
+  

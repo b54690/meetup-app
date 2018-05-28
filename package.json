@@ -6,6 +6,9 @@
   "author": "b54690 <belafonte@hotmail.co.uk>",
   "license": "MIT",
   "dependencies": {
-    "meetup": "^0.1.0-SNAPSHOT"
+    "express": "^4.16.3",
+    "meetup": "^0.1.0-SNAPSHOT",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "name": "meetup-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:b54690/meetup-app.git",
+  "author": "b54690 <belafonte@hotmail.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "meetup": "^0.1.0-SNAPSHOT"
+  }
+}
